@@ -15,7 +15,22 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "M. Aktaruzzaman Joti — Frontend Engineer",
   description:
-    "Portfolio of M. Aktaruzzaman Joti — Frontend Engineer specializing in interactive experiences, animation systems, and scalable React architectures.",
+    "Portfolio of M. Aktaruzzaman Joti — Frontend Engineer specializing in interactive experiences, physics-based animations, and scalable React architectures.",
+  keywords: [
+    "Frontend Engineer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Animation",
+    "Portfolio",
+  ],
+  authors: [{ name: "M. Aktaruzzaman Joti" }],
+  openGraph: {
+    title: "M. Aktaruzzaman Joti — Frontend Engineer",
+    description:
+      "Interactive portfolio showcasing frontend engineering with physics-based paper animations.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
