@@ -45,17 +45,19 @@ export function About() {
             className="text-sm leading-relaxed mb-4"
             style={{ color: "var(--text-secondary)" }}
           >
-            Frontend engineer with 5+ years of experience building
-            high-performance web applications. Specialized in interactive
-            experiences, animation systems, and scalable React architectures.
+            Frontend Engineer with 4+ years of experience building
+            high-performance, scalable web applications. Specialized in React
+            ecosystems, interactive UI development, and delivering
+            production-grade software used by millions of users.
           </p>
           <p
             className="text-sm leading-relaxed mb-4"
             style={{ color: "var(--text-secondary)" }}
           >
-            Passionate about pushing the boundaries of what&apos;s possible in
-            the browser — from physics simulations to complex animation
-            orchestration.
+            From building gold purchasing platforms to OTA booking systems, I
+            bring a track record of single-handedly delivering complex
+            applications from scratch — with a focus on performance optimization,
+            clean architecture, and exceptional user experience.
           </p>
           <div
             className="font-mono text-xs mt-4"
@@ -79,10 +81,10 @@ export function About() {
               className="text-sm leading-loose"
               style={{ color: "var(--text-secondary)" }}
             >
-              <div><span style={{ color: "var(--accent)" }}>→</span> Interactive UI / Animation</div>
-              <div><span style={{ color: "var(--accent)" }}>→</span> Performance Optimization</div>
-              <div><span style={{ color: "var(--accent)" }}>→</span> Design Systems & Architecture</div>
-              <div><span style={{ color: "var(--accent)" }}>→</span> Developer Experience Tooling</div>
+              <div><span style={{ color: "var(--accent)" }}>→</span> React / Next.js Architecture</div>
+              <div><span style={{ color: "var(--accent)" }}>→</span> Performance Optimization &amp; Bundle Analysis</div>
+              <div><span style={{ color: "var(--accent)" }}>→</span> Design Systems &amp; Component Libraries</div>
+              <div><span style={{ color: "var(--accent)" }}>→</span> Full-Stack Development (React + Node.js)</div>
             </div>
           </motion.div>
 
@@ -97,16 +99,16 @@ export function About() {
             <div className="paper-label mb-3">METRICS</div>
             <div className="flex gap-8">
               <div className="text-center">
-                <div className="text-2xl font-bold" style={{ color: "var(--accent)" }}>5+</div>
+                <div className="text-2xl font-bold" style={{ color: "var(--accent)" }}>4+</div>
                 <div className="font-mono text-xs mt-1" style={{ color: "var(--text-muted)" }}>YEARS</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold" style={{ color: "var(--accent)" }}>20+</div>
-                <div className="font-mono text-xs mt-1" style={{ color: "var(--text-muted)" }}>PROJECTS</div>
+                <div className="text-2xl font-bold" style={{ color: "var(--accent)" }}>3+</div>
+                <div className="font-mono text-xs mt-1" style={{ color: "var(--text-muted)" }}>COMPANIES</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold" style={{ color: "var(--accent)" }}>50+</div>
-                <div className="font-mono text-xs mt-1" style={{ color: "var(--text-muted)" }}>COMPONENTS</div>
+                <div className="text-2xl font-bold" style={{ color: "var(--accent)" }}>MILLIONS</div>
+                <div className="font-mono text-xs mt-1" style={{ color: "var(--text-muted)" }}>OF USERS</div>
               </div>
             </div>
           </motion.div>
