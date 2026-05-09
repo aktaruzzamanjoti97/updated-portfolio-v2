@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 interface Experience {
   id: string;
@@ -77,7 +77,6 @@ const EXPERIENCES: Experience[] = [
 export function Experience() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   return (
     <section ref={ref} id="experience" className="relative py-32 px-6 md:px-16 max-w-6xl mx-auto">
@@ -107,36 +106,23 @@ export function Experience() {
               />
               <div className={`w-full md:w-5/12 ${exp.side === "left" ? "md:pr-12" : "md:pl-12"}`}>
                 <div
-                  className="paper-card p-5 rounded-sm cursor-pointer"
+                  className="paper-card p-5 rounded-sm"
                   style={{ transform: `rotate(${exp.rotation}deg)` }}
-                  onClick={() => setExpandedId(expandedId === exp.id ? null : exp.id)}
                 >
                   <div className="paper-label mb-3">{exp.label}</div>
                   <h3 className="text-base font-bold" style={{ color: "var(--text-primary)" }}>{exp.role}</h3>
                   <div className="text-sm mt-1" style={{ color: "var(--accent)" }}>@ {exp.company}</div>
                   <div className="font-mono text-xs mt-2" style={{ color: "var(--text-muted)" }}>{exp.period}</div>
                   <p className="text-sm mt-3 leading-relaxed" style={{ color: "var(--text-secondary)" }}>{exp.summary}</p>
-                  <AnimatePresence>
-                    {expandedId === exp.id && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="mt-3 pt-3" style={{ borderTop: "1px solid var(--border-paper)" }}>
-                          <ul className="space-y-1">
-                            {exp.details.map((detail, j) => (
-                              <li key={j} className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                                <span style={{ color: "var(--accent)" }}>→</span> {detail}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  <div className="mt-3 pt-3" style={{ borderTop: "1px solid var(--border-paper)" }}>
+                    <ul className="space-y-1">
+                      {exp.details.map((detail, j) => (
+                        <li key={j} className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                          <span style={{ color: "var(--accent)" }}>→</span> {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -144,7 +130,7 @@ export function Experience() {
         </div>
       </div>
       <div className="font-mono text-xs mt-8 text-right" style={{ color: "var(--label-color)" }}>
-        CLICK CARD TO EXPAND | PAPERS SWAY ON SCROLL
+        PAPERS SWAY ON SCROLL
       </div>
     </section>
   );
