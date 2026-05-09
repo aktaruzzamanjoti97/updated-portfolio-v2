@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #0a1628;
+  --bg-paper: rgba(30, 58, 95, 0.7);
+  --border-grid: rgba(59, 130, 246, 0.06);
+  --border-grid-major: rgba(59, 130, 246, 0.12);
+  --border-paper: rgba(59, 130, 246, 0.3);
+  --text-primary: #bfdbfe;
+  --text-secondary: rgba(148, 163, 184, 0.8);
+  --text-muted: rgba(100, 116, 139, 0.6);
+  --accent: #3b82f6;
+  --accent-dim: rgba(59, 130, 246, 0.15);
+  --label-color: rgba(59, 130, 246, 0.4);
+  --shadow-paper: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.light {
+  --bg-primary: #f0f4f8;
+  --bg-paper: rgba(255, 255, 255, 0.9);
+  --border-grid: rgba(59, 130, 246, 0.06);
+  --border-grid-major: rgba(59, 130, 246, 0.12);
+  --border-paper: rgba(59, 130, 246, 0.25);
+  --text-primary: #0f172a;
+  --text-secondary: rgba(51, 65, 85, 0.9);
+  --text-muted: rgba(100, 116, 139, 0.7);
+  --accent: #3b82f6;
+  --accent-dim: rgba(59, 130, 246, 0.1);
+  --label-color: rgba(59, 130, 246, 0.35);
+  --shadow-paper: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Blueprint grid background */
+.blueprint-grid {
+  background-image:
+    linear-gradient(var(--border-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-grid) 1px, transparent 1px),
+    linear-gradient(var(--border-grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-grid-major) 1px, transparent 1px);
+  background-size:
+    20px 20px,
+    20px 20px,
+    100px 100px,
+    100px 100px;
+}
+
+/* Paper card base styles */
+.paper-card {
+  background: var(--bg-paper);
+  border: 1px solid var(--border-paper);
+  box-shadow: var(--shadow-paper);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paper-label {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.5rem;
+  color: var(--label-color);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Smooth transitions for theme switch */
+.paper-card,
+.blueprint-grid {
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
