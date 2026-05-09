@@ -18,7 +18,18 @@ export function PaperEngine() {
       setWindEnabled(false);
       return;
     }
-    setWindEnabled(true);
+
+    const checkViewport = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setWindEnabled(false);
+      } else {
+        setWindEnabled(true);
+      }
+    };
+
+    checkViewport();
+    window.addEventListener("resize", checkViewport);
 
     const loop = () => {
       updatePositions();
@@ -31,6 +42,7 @@ export function PaperEngine() {
       if (frameRef.current) {
         cancelAnimationFrame(frameRef.current);
       }
+      window.removeEventListener("resize", checkViewport);
     };
   }, [reducedMotion, updatePositions, setWindEnabled]);
 
