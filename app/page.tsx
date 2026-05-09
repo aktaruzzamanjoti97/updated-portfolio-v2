@@ -1,10 +1,12 @@
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { PaperCanvas } from "@/components/paper/paper-canvas";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 export default function Home() {
   return (
     <SmoothScroll>
       <PaperCanvas />
+      <ThemeToggle />
       <main>
         <section
           id="hero"
