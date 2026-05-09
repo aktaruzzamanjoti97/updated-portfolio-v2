@@ -14,16 +14,55 @@ interface SkillNode {
 }
 
 const SKILLS: SkillNode[] = [
-  { id: "frontend", label: "FRONTEND", x: 5, y: 30, type: "category", proficiency: 95, connections: ["react", "nextjs", "typescript"] },
-  { id: "react", label: "React", x: 25, y: 15, type: "skill", proficiency: 92, connections: [] },
-  { id: "nextjs", label: "Next.js", x: 48, y: 25, type: "skill", proficiency: 88, connections: [] },
-  { id: "typescript", label: "TypeScript", x: 35, y: 55, type: "skill", proficiency: 90, connections: [] },
-  { id: "styling", label: "STYLING", x: 65, y: 10, type: "category", proficiency: 90, connections: ["tailwind", "framer"] },
-  { id: "tailwind", label: "Tailwind CSS", x: 70, y: 35, type: "skill", proficiency: 95, connections: [] },
-  { id: "framer", label: "Framer Motion", x: 85, y: 20, type: "skill", proficiency: 85, connections: [] },
-  { id: "tools", label: "TOOLS", x: 55, y: 65, type: "category", proficiency: 85, connections: ["git", "zustand"] },
-  { id: "git", label: "Git", x: 78, y: 55, type: "skill", proficiency: 88, connections: [] },
-  { id: "zustand", label: "Zustand", x: 40, y: 80, type: "skill", proficiency: 80, connections: [] },
+  // Category: JAVASCRIPT
+  { id: "javascript", label: "JAVASCRIPT", x: 8, y: 20, type: "category", proficiency: 95, connections: ["react"] },
+  { id: "react", label: "React JS", x: 22, y: 8, type: "skill", proficiency: 95, connections: [] },
+
+  // Category: METAFRAMEWORKS
+  { id: "metaframeworks", label: "METAFRAMEWORKS", x: 35, y: 8, type: "category", proficiency: 90, connections: ["nextjs", "gatsby"] },
+  { id: "nextjs", label: "Next.js", x: 48, y: 20, type: "skill", proficiency: 90, connections: [] },
+  { id: "gatsby", label: "Gatsby", x: 35, y: 24, type: "skill", proficiency: 78, connections: [] },
+
+  // Category: BACKEND
+  { id: "backend", label: "BACKEND", x: 62, y: 8, type: "category", proficiency: 80, connections: ["nodejs"] },
+  { id: "nodejs", label: "Node.js", x: 75, y: 20, type: "skill", proficiency: 80, connections: [] },
+
+  // Category: STATE MANAGEMENT
+  { id: "state", label: "STATE MGMT", x: 88, y: 8, type: "category", proficiency: 85, connections: ["redux", "zustand"] },
+  { id: "redux", label: "Redux", x: 85, y: 24, type: "skill", proficiency: 85, connections: [] },
+  { id: "zustand", label: "Zustand", x: 95, y: 20, type: "skill", proficiency: 85, connections: [] },
+
+  // Category: CSS
+  { id: "css", label: "CSS", x: 5, y: 50, type: "category", proficiency: 95, connections: ["tailwind", "sass", "cssmodules", "styledcomp"] },
+  { id: "tailwind", label: "Tailwind CSS", x: 10, y: 66, type: "skill", proficiency: 95, connections: [] },
+  { id: "sass", label: "Sass", x: 3, y: 80, type: "skill", proficiency: 82, connections: [] },
+  { id: "cssmodules", label: "CSS Modules", x: 18, y: 76, type: "skill", proficiency: 80, connections: [] },
+  { id: "styledcomp", label: "Styled Components", x: 25, y: 60, type: "skill", proficiency: 78, connections: [] },
+
+  // Category: CSS FRAMEWORKS
+  { id: "cssfw", label: "CSS FRAMEWORKS", x: 42, y: 48, type: "category", proficiency: 88, connections: ["mui", "chakra", "shadcn", "bootstrap"] },
+  { id: "mui", label: "MUI", x: 35, y: 62, type: "skill", proficiency: 85, connections: [] },
+  { id: "chakra", label: "Chakra UI", x: 45, y: 72, type: "skill", proficiency: 80, connections: [] },
+  { id: "shadcn", label: "Shadcn", x: 52, y: 62, type: "skill", proficiency: 88, connections: [] },
+  { id: "bootstrap", label: "Bootstrap", x: 40, y: 82, type: "skill", proficiency: 82, connections: [] },
+
+  // Category: DATA FETCHING
+  { id: "datafetch", label: "DATA FETCHING", x: 68, y: 48, type: "category", proficiency: 88, connections: ["tanstack", "swr"] },
+  { id: "tanstack", label: "TanStack Query", x: 65, y: 64, type: "skill", proficiency: 88, connections: [] },
+  { id: "swr", label: "SWR", x: 78, y: 58, type: "skill", proficiency: 80, connections: [] },
+
+  // Category: LANGUAGE TOOLING
+  { id: "langtool", label: "LANG TOOLING", x: 88, y: 48, type: "category", proficiency: 92, connections: ["typescript", "eslint"] },
+  { id: "typescript", label: "TypeScript", x: 88, y: 64, type: "skill", proficiency: 92, connections: [] },
+  { id: "eslint", label: "ESLint", x: 95, y: 56, type: "skill", proficiency: 85, connections: [] },
+
+  // Category: CONTAINER
+  { id: "container", label: "CONTAINER", x: 25, y: 90, type: "category", proficiency: 75, connections: ["docker"] },
+  { id: "docker", label: "Docker", x: 40, y: 92, type: "skill", proficiency: 75, connections: [] },
+
+  // Category: TESTING
+  { id: "testing", label: "TESTING", x: 60, y: 88, type: "category", proficiency: 78, connections: ["jest"] },
+  { id: "jest", label: "Jest", x: 75, y: 90, type: "skill", proficiency: 78, connections: [] },
 ];
 
 export function Skills() {
@@ -51,7 +90,7 @@ export function Skills() {
         Skills & Technologies
       </h2>
 
-      <div className="relative w-full" style={{ height: "400px" }}>
+      <div className="relative w-full" style={{ height: "550px" }}>
         <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
           {SKILLS.filter((s) => s.type === "category").map((cat) =>
             cat.connections.map((targetId) => {
@@ -88,7 +127,7 @@ export function Skills() {
             }}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
-            transition={{ duration: 0.4, delay: 0.1 * i }}
+            transition={{ duration: 0.4, delay: 0.05 * i }}
             onMouseEnter={() => setHoveredNode(node.id)}
             onMouseLeave={() => setHoveredNode(null)}
           >
