@@ -11,10 +11,10 @@ interface Metric {
 }
 
 const METRICS: Metric[] = [
-  { label: "Lighthouse Score", value: "98/100", percent: 98, color: "var(--accent)" },
-  { label: "Bundle Size (gzipped)", value: "45KB", percent: 35, color: "var(--accent)" },
-  { label: "First Contentful Paint", value: "0.8s", percent: 85, color: "#4ade80" },
-  { label: "Animation FPS Target", value: "60fps", percent: 100, color: "#4ade80" },
+  { label: "Years of Experience", value: "4+", percent: 80, color: "var(--accent)" },
+  { label: "Users Served", value: "Millions", percent: 90, color: "var(--accent)" },
+  { label: "Bundle Size Reduction", value: "60%", percent: 60, color: "#4ade80" },
+  { label: "Lighthouse Score Target", value: "90+", percent: 90, color: "#4ade80" },
 ];
 
 export function Engineering() {

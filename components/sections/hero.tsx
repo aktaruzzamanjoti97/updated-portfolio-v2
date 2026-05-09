@@ -119,7 +119,7 @@ export function Hero() {
           className="mt-4 text-sm tracking-wider"
           style={{ color: "var(--text-muted)" }}
         >
-          Building interactive experiences with physics &amp; precision
+          Frontend Engineer crafting scalable, high-performance web experiences
         </p>
       </motion.div>
 
