@@ -12,6 +12,7 @@ export interface PaperConfig {
   initialY: number;
   initialRotation: number;
   content: string;
+  lines?: string[];
 }
 
 export interface Paper {

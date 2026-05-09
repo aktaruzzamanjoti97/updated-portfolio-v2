@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { usePaperStore, type PaperConfig } from "@/store/paper-store";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
@@ -10,40 +10,73 @@ const HERO_PAPERS: { id: string; config: PaperConfig }[] = [
     id: "hero-1",
     config: {
       driftSpeed: 0.5, windSensitivity: 0.8, turbulence: 0.3,
-      damping: 0.95, maxRotation: 8, width: 180, height: 100,
-      initialX: 80, initialY: 80, initialRotation: -6, content: "PAPER-001",
+      damping: 0.95, maxRotation: 8, width: 180, height: 120,
+      initialX: 80, initialY: 80, initialRotation: -6,
+      content: "STACK-001",
+      lines: [
+        "const Stack = [",
+        '  "React", "Next.js",',
+        '  "TypeScript", "Node.js"',
+        "];",
+      ],
     },
   },
   {
     id: "hero-2",
     config: {
       driftSpeed: 0.4, windSensitivity: 0.6, turbulence: 0.2,
-      damping: 0.96, maxRotation: 6, width: 160, height: 80,
-      initialX: 0, initialY: 0, initialRotation: 4, content: "WIND-VEC-03",
+      damping: 0.96, maxRotation: 6, width: 170, height: 100,
+      initialX: 0, initialY: 0, initialRotation: 4,
+      content: "METRICS-003",
+      lines: [
+        "→ Users: Millions",
+        "→ Companies: 3+",
+        "→ Years: 4+",
+      ],
     },
   },
   {
     id: "hero-3",
     config: {
       driftSpeed: 0.3, windSensitivity: 0.7, turbulence: 0.25,
-      damping: 0.94, maxRotation: 5, width: 190, height: 110,
-      initialX: 0, initialY: 0, initialRotation: -3, content: "PAPER-007",
+      damping: 0.94, maxRotation: 5, width: 190, height: 120,
+      initialX: 0, initialY: 0, initialRotation: -3,
+      content: "BUILD-007",
+      lines: [
+        "$ npm run build",
+        "→ Compiled in 1.2s",
+        "→ Bundle: 45KB gzip",
+        "→ Status: PASS ✓",
+      ],
     },
   },
   {
     id: "hero-4",
     config: {
       driftSpeed: 0.6, windSensitivity: 0.5, turbulence: 0.35,
-      damping: 0.93, maxRotation: 10, width: 130, height: 70,
-      initialX: 0, initialY: 0, initialRotation: 7, content: "NOTE-012",
+      damping: 0.93, maxRotation: 10, width: 180, height: 80,
+      initialX: 0, initialY: 0, initialRotation: 7,
+      content: "SKILLS-012",
+      lines: [
+        "React · Next.js",
+        "TypeScript · Node.js",
+        "Tailwind · Zustand",
+      ],
     },
   },
   {
     id: "hero-5",
     config: {
       driftSpeed: 0.7, windSensitivity: 0.9, turbulence: 0.4,
-      damping: 0.92, maxRotation: 12, width: 90, height: 50,
-      initialX: 0, initialY: 0, initialRotation: -10, content: "NOTE-015",
+      damping: 0.92, maxRotation: 12, width: 200, height: 110,
+      initialX: 0, initialY: 0, initialRotation: -10,
+      content: "GIT-LOG-015",
+      lines: [
+        "$ git log --oneline",
+        "a3f2c1d feat: gold purchase app",
+        "e7b4d2a fix: memory leak",
+        "9c1e3f7 feat: OTA B2B",
+      ],
     },
   },
 ];

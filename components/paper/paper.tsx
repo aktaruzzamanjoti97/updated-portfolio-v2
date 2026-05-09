@@ -39,8 +39,18 @@ export function Paper({ paper }: PaperProps) {
       exit={{ opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="paper-card h-full p-2 rounded-sm">
-        <div className="paper-label">{paper.config.content}</div>
+      <div className="paper-card h-full p-2 rounded-sm overflow-hidden">
+        <div className="paper-label mb-1">{paper.config.content}</div>
+        {paper.config.lines && (
+          <div
+            className="font-mono text-[9px] leading-normal"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            {paper.config.lines.map((line, i) => (
+              <div key={i}>{line}</div>
+            ))}
+          </div>
+        )}
       </div>
     </motion.div>
   );
